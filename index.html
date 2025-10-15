@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
@@ -70,15 +70,6 @@
       text-align: center;
     }
 
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #666;
-      position: absolute;
-      bottom: 30mm;
-      width: 160mm;
-    }
-
     @media print {
       body {
         background: none;
@@ -89,7 +80,7 @@
         width: 100%;
         height: auto;
       }
-      .date { color: #000; } /* lepsza widoczność przy druku */
+      .date { color: #000; }
     }
   </style>
 </head>
@@ -120,6 +111,9 @@
         Wojciech Trochimowicz
       </p>
     </section>
+
+  </div>
+
   <script>
     // Ustawia datę w formacie polskim (np. "15 października 2025")
     (function() {
@@ -129,7 +123,6 @@
         const el = document.getElementById('page-date');
         if (el) el.textContent = fmt.format(now);
       } catch (e) {
-        // Fallback: jeśli Intl nie działa, pokazz datę w formacie RRRR-MM-DD
         const el = document.getElementById('page-date');
         if (el) el.textContent = new Date().toISOString().slice(0,10);
       }
@@ -138,5 +131,7 @@
 
 </body>
 </html>
+
+
 
 
