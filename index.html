@@ -1,127 +1,148 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUBEX – Profil Firmy</title>
-    <style>
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 40px 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project KUBEX</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 40px 0;
+    }
 
-        .a4-page {
-            background-color: white;
-            width: 210mm;
-            height: 297mm;
-            margin: 0 auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            padding: 30mm 25mm;
-            box-sizing: border-box;
-        }
+    .a4-page {
+      background-color: white;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      padding: 30mm 25mm;
+      box-sizing: border-box;
+      position: relative;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    /* Data w prawym górnym rogu */
+    .date {
+      position: absolute;
+      top: 18mm;
+      right: 25mm;
+      font-size: 13px;
+      color: #555;
+    }
 
-        header img {
-            width: 120px;
-            height: auto;
-        }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        h1 {
-            font-size: 36px;
-            margin: 10px 0;
-            letter-spacing: 1px;
-        }
+    header img {
+      width: 120px;
+      height: auto;
+    }
 
-        h2 {
-            margin-top: 30px;
-            font-size: 22px;
-            border-bottom: 2px solid #000;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
+    h1 {
+      font-size: 36px;
+      margin: 10px 0;
+      letter-spacing: 1px;
+    }
 
-        p {
-            font-size: 15px;
-            line-height: 1.6;
-            text-align: justify;
-            margin: 10px 0;
-        }
+    h2 {
+      margin-top: 30px;
+      font-size: 22px;
+      border-bottom: 2px solid #000;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
 
-        .founders {
-            font-weight: bold;
-            font-size: 16px;
-            margin-top: 15px;
-            text-align: center;
-        }
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: justify;
+      margin: 10px 0;
+    }
 
-        footer {
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-            position: absolute;
-            bottom: 30mm;
-            width: 160mm;
-        }
+    .founders {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 15px;
+      text-align: center;
+    }
 
-        @media print {
-            body {
-                background: none;
-            }
-            .a4-page {
-                box-shadow: none;
-                margin: 0;
-                width: 100%;
-                height: auto;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      position: absolute;
+      bottom: 30mm;
+      width: 160mm;
+    }
+
+    @media print {
+      body {
+        background: none;
+      }
+      .a4-page {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+      }
+      .date { color: #000; } /* lepsza widoczność przy druku */
+    }
+  </style>
 </head>
 <body>
 
-<div class="a4-page">
+  <div class="a4-page">
+    <!-- Data (wypełniana przez JS) -->
+    <div class="date" id="page-date"></div>
+
     <header>
-        <img src="Bez tytułu.png" alt="Logo KUBEX">
-        <h1>KUBEX</h1>
-        <p><em>Innowacja i niezawodność w jednym.</em></p>
+      <img src="Bez tytułu.png" alt="Logo KUBEX">
+      <h1>Project KUBEX</h1>
+      <p><em>Innowacja i niezawodność w jednym.</em></p>
     </header>
 
     <section>
-        <h2>O nas</h2>
-        <p>
-            KUBEX to firma stworzona z pasji do nowoczesnych technologii i funkcjonalnych rozwiązań. 
-            Dążymy do perfekcji w każdym projekcie, łącząc estetykę, prostotę i skuteczność działania. 
-            Naszym celem jest dostarczanie produktów i usług, które nie tylko spełniają oczekiwania klientów, 
-            ale także inspirują do nowych pomysłów.
-        </p>
+      <h2>O nas</h2>
+      <p>
+        Project KUBEX to inicjatywa powstała z pasji do nowoczesnych technologii i funkcjonalnych rozwiązań.
+        Łączymy estetykę, prostotę i skuteczność, tworząc projekty, które inspirują do działania i rozwoju.
+      </p>
     </section>
 
     <section>
-        <h2>Założyciele</h2>
-        <p class="founders">
-            Kuba Biel<br>
-            Wojciech Trochimowicz
-        </p>
+      <h2>Założyciele</h2>
+      <p class="founders">
+        Kuba Biel<br>
+        Wojciech Trochimowicz
+      </p>
     </section>
 
-    <section>
-        <h2>Kontakt</h2>
-        <p>
-            Jeśli chcesz nawiązać współpracę lub dowiedzieć się więcej o naszych projektach, 
-            skontaktuj się z nami pod adresem:
-        </p>
-        <p style="text-align:center;"><a href="mailto:kontakt@kubex.pl">kontakt@kubex.pl</a></p>
-    </section>
+    <!-- sekcja Kontakt usunięta zgodnie z prośbą -->
 
     <footer>
-        © 2025 KUBEX – Wszystkie prawa zastrzeżone
+      2025 Project KUBEX – Wszystkie prawa zastrzeżone
     </footer>
-</div>
+  </div>
+
+  <script>
+    // Ustawia datę w formacie polskim (np. "15 października 2025")
+    (function() {
+      try {
+        const now = new Date();
+        const fmt = new Intl.DateTimeFormat('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' });
+        const el = document.getElementById('page-date');
+        if (el) el.textContent = fmt.format(now);
+      } catch (e) {
+        // Fallback: jeśli Intl nie działa, pokazz datę w formacie RRRR-MM-DD
+        const el = document.getElementById('page-date');
+        if (el) el.textContent = new Date().toISOString().slice(0,10);
+      }
+    })();
+  </script>
 
 </body>
 </html>
