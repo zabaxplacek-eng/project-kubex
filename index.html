@@ -13,17 +13,16 @@
     }
 
     .a4-page {
-      background-color: white;
+      background-color: #fff;
       width: 210mm;
       min-height: 297mm;
       margin: 0 auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       padding: 30mm 25mm;
       box-sizing: border-box;
       position: relative;
     }
 
-    /* Data w prawym górnym rogu */
     .date {
       position: absolute;
       top: 18mm;
@@ -80,18 +79,18 @@
         width: 100%;
         height: auto;
       }
-      .date { color: #000; }
+      .date {
+        color: #000;
+      }
     }
   </style>
 </head>
 <body>
-
   <div class="a4-page">
-    <!-- Data (wypełniana przez JS) -->
     <div class="date" id="page-date"></div>
 
     <header>
-      <img src="Bez tytułu.png" alt="Logo KUBEX">
+      <img src="Bez tytułu.png" alt="Logo firmy KUBEX">
       <h1>Project KUBEX</h1>
       <p><em>Innowacja i niezawodność w jednym.</em></p>
     </header>
@@ -111,27 +110,20 @@
         Wojciech Trochimowicz
       </p>
     </section>
-
   </div>
 
   <script>
-    // Ustawia datę w formacie polskim (np. "15 października 2025")
-    (function() {
-      try {
-        const now = new Date();
-        const fmt = new Intl.DateTimeFormat('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' });
-        const el = document.getElementById('page-date');
-        if (el) el.textContent = fmt.format(now);
-      } catch (e) {
-        const el = document.getElementById('page-date');
-        if (el) el.textContent = new Date().toISOString().slice(0,10);
-      }
-    })();
+    // Wyświetla aktualną datę w formacie polskim, np. "15 października 2025"
+    const el = document.getElementById("page-date");
+    if (el) {
+      const now = new Date();
+      const fmt = new Intl.DateTimeFormat("pl-PL", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+      el.textContent = fmt.format(now);
+    }
   </script>
-
 </body>
 </html>
-
-
-
-
